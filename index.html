@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon link -->
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <title>ヨガグルー - あなたの健康をサポートします</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- font-awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <!-- AOS ANIMATION -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Modal styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .loading-spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .modal-text {
+            font-size: 18px;
+            margin-top: 20px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .modal-text span {
+            color: #3498db;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Modal Structure -->
+    <div class="modal" id="loadingModal">
+        <div class="modal-content">
+            <div class="loading-spinner"></div>
+            <p class="modal-text">タイムゾーンを確認しています... <br><span>お待ちください</span></p>
+        </div>
+    </div>
+    <header>
+        <nav id="navbar" data-aos="fade-down">
+            <div class="left-nav">
+                <img src="logo.png" alt="ヨガグルー">
+            </div>
+            <div class="right-nav">
+                <input type="checkbox" name="check" id="check">
+                <label for="check" class="CheckBtn">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </label>
+                <ul class="listing">
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="#aboutus">サービス</a></li>
+                    <li><a href="#menu">クラス</a></li>
+                    <li><a href="#offer">料金</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ---HOME SECTION--- -->
+        <section id="home">
+            <div class="divide">
+                <div class="left" data-aos="fade-right">
+                    <h1>私たちは世界のヨガグルーです。</h1>
+                    <p>
+                        私たちは24時間365日、あなたのケアのためにここにいます。
+                        どんな助けでも、お気軽にお電話ください。
+                    </p>
+                    <div class="head-btn">
+                        <button class="H-Btn"><a href="#aboutus">もっと知る</a></button>
+                        <button class="H-Btn"><a href="#menu">クラスを見る</a></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-----ABOUT US----->
+        <section id="aboutus">
+            <h1 class="head">私たちの使命</h1>
+            <div class="divide" data-aos="zoom-in-up">
+                <div class="right-about">
+                    <h2>あなたの健康を守ります</h2>
+                    <p>
+                        ヨガグルーはあなたの健康づくりをお手伝いします。
+                        無料で始めて、人生を取り戻しましょう。
+                    </p>
+                    <button class="H-Btn"><a href="#">今すぐ相談する</a></button>
+                </div>
+            </div>
+        </section>
+
+        <!-----CLASSES AND SCHEDULES SECTION----->
+
+        <section id="menu">
+            <h1 class="head">クラスとスケジュール</h1>
+
+            <div class="swiper mySwiper" data-aos="zoom-in">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide card">
+                        <div class="card-content">
+                            <h3>初心者クラス</h3>
+                            <p>ヨガの基礎を学び、柔軟性とバランスを高めましょう。</p>
+                            <p><strong>毎週月曜日と水曜日: 10:00 - 11:00</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide card">
+                        <div class="card-content">
+                            <h3>中級クラス</h3>
+                            <p>より高度なポーズと呼吸法に挑戦し、集中力を高めます。</p>
+                            <p><strong>毎週火曜日と木曜日: 18:00 - 19:00</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide card">
+                        <div class="card-content">
+                            <h3>瞑想クラス</h3>
+                            <p>心を落ち着かせ、内なる平和を見つけるための瞑想セッションです。</p>
+                            <p><strong>毎週金曜日: 12:00 - 13:00</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ----INSTRUCTORS SECTION---- -->
+        <section id="instructors">
+            <h1 class="head">インストラクター紹介</h1>
+            <div class="divide">
+                <div class="left-about">
+                    <h3>田中 美穂</h3>
+                    <p>10年以上の経験を持つインストラクター</p>
+                </div>
+                <div class="left-about">
+                    <h3>佐藤 健一</h3>
+                    <p>マインドフルネス専門家</p>
+                </div>
+                <div class="left-about">
+                    <h3>鈴木 花子</h3>
+                    <p>特別なニーズを持つ方への指導に特化</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- -----CONTACT US SECTION---- -->
+        <section id="contact">
+            <h1 class="head">お問い合わせ</h1>
+
+            <div class="contact-box">
+                <div class="cnct-left" data-aos="fade-right">
+                    <h3>フォームを入力してお問い合わせください。</h3>
+                    <form action="#" class="cnct-Form">
+
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label>名前</label>
+                                <input type="text" placeholder="名前を入力してください" />
+                            </div>
+                            <div class="input-group">
+                                <label>メール</label>
+                                <input type="email" placeholder="メールを入力してください" required="required">
+                            </div>
+                        </div>
+
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label>電話</label>
+                                <input type="number" placeholder="電話番号" required="required">
+                            </div>
+                            <div class="input-group">
+                                <label>都市</label>
+                                <input type="text" placeholder="都市を入力してください" />
+                            </div>
+                        </div>
+
+                        <label>メッセージ:</label>
+                        <textarea rows="5" placeholder="メッセージを入力してください"></textarea>
+                        <button type="submit" class="H-Btn">送信</button>
+                    </form>
+                </div>
+
+                
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER SECTION IS HERE -->
+    <footer>
+        <div class="footer-section">
+
+            <div class="footer-item" data-aos="fade-up" data-aos-duration="3000">
+                <h2>ヨガグルー</h2>
+                <p><a href="#">ホーム</a></p>
+                <p><a href="#">サービス</a></p>
+                <p><a href="#">クラス</a></p>
+                <p><a href="#">料金</a></p>
+                <p><a href="#">お問い合わせ</a></p>
+            </div>
+        </div>
+        <p class="footerPara">Copyright &#169 2023-2024, ヨガグルー. All Right Reserved.</p>
+    </footer>
+    <!-- SCROLL ON TOP IS HERE -->
+    <div id="scroll-on-top" onclick="scrolltop();">
+        <span><i class="fa-solid fa-arrow-up"></i></span>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- AOS ANIMATION -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- --Index JS-- -->
+    <script src="./index.js"></script>
+    <!-- --Index JS-- -->
+    <script>
+        // Show the modal on page load
+        window.onload = function () {
+            const modal = document.getElementById("loadingModal");
+
+            // Display the modal
+            modal.style.display = "flex";
+
+            // Simulate time-consuming process (like detecting timezone)
+            setTimeout(() => {
+                const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                const japanTimezones = ['Asia/Tokyo', 'Etc/GMT-9'];
+
+                if (japanTimezones.includes(userTimezone)) {
+                    // Redirect to Japanese version
+                    window.location.href = "https://delightful-smakager-b5ed06.netlify.app"; // Update with the actual path to the Japanese version
+                } else {
+                    // Close the modal
+                    modal.style.display = "none";
+                }
+            }, 2000); // Ensure the loading animation displays for at least 2 seconds
+        };
+    </script>
+</body>
+
+</html>
